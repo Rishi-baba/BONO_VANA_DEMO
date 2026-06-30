@@ -9,7 +9,7 @@ const SLIDES = [
     subtitle: "Linen Apparel Designed for Slow Living",
     tagline: "Upgrade your resort wardrobe with organic, handcrafted linen garments designed for natural breathability.",
     image: "/images/hero_resort_wear.jpg",
-    video: "/images/Model_walks_toward_camera_1080p_202607010136.mp4",
+    video: "/images/Woman_looking_toward_garden_1080p_202607010113.mp4",
     link: "/shop?collection=resort"
   },
   {
@@ -27,7 +27,7 @@ const SLIDES = [
     subtitle: "Timeless Resort Silhouette",
     tagline: "Upgrade your travel essentials with the organic flax wrap dress, crafted to grow softer with every beach walk.",
     image: "/images/amara_linen_dress.jpg",
-    video: "/images/Woman_looking_toward_garden_1080p_202607010113.mp4",
+    video: "/images/Model_walks_toward_camera_1080p_202607010136.mp4",
     link: "/shop/amara-linen-wrap-dress"
   }
 ];
@@ -40,9 +40,11 @@ export const HeroSlider = () => {
   };
 
   useEffect(() => {
-    const timer = setInterval(handleNext, 8500);
-    return () => clearInterval(timer);
-  }, []);
+    if (!SLIDES[currentSlide].video) {
+      const timer = setTimeout(handleNext, 8500);
+      return () => clearTimeout(timer);
+    }
+  }, [currentSlide]);
 
   const slide = SLIDES[currentSlide];
 
@@ -57,9 +59,9 @@ export const HeroSlider = () => {
               src={slide.video}
               poster={slide.image}
               autoPlay
-              loop
               muted
               playsInline
+              onEnded={handleNext}
               initial={{ opacity: 0, scale: 1.02 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 1, scale: 1, zIndex: -1 }}
