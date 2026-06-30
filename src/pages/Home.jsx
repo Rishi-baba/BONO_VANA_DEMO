@@ -20,7 +20,7 @@ export const Home = () => {
       <HeroSlider />
 
       {/* Rest of the content wrapped to overlap the sticky hero */}
-      <div className="relative z-10 bg-warm-ivory">
+      <div className="relative z-10 bg-warm-ivory overflow-hidden">
         {/* Categories Bar */}
         <CategoryList />
 
