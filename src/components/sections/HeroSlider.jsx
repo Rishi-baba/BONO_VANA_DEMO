@@ -9,6 +9,7 @@ const SLIDES = [
     subtitle: "Linen Apparel Designed for Slow Living",
     tagline: "Upgrade your resort wardrobe with organic, handcrafted linen garments designed for natural breathability.",
     image: "/images/hero_resort_wear.jpg",
+    video: "/images/Model_walks_toward_camera_1080p_202607010136.mp4",
     link: "/shop?collection=resort"
   },
   {
@@ -17,6 +18,7 @@ const SLIDES = [
     subtitle: "Handcrafted Sustainability",
     tagline: "Upgrade your layering pieces with raw, GOTS-certified organic cotton knits designed for year-round ease.",
     image: "/images/linen_textures.jpg",
+    video: "/images/Product_showcase_organic_knit_fa._202607010137.mp4",
     link: "/shop?collection=essentials"
   },
   {
@@ -25,6 +27,7 @@ const SLIDES = [
     subtitle: "Timeless Resort Silhouette",
     tagline: "Upgrade your travel essentials with the organic flax wrap dress, crafted to grow softer with every beach walk.",
     image: "/images/amara_linen_dress.jpg",
+    video: "/images/Woman_looking_toward_garden_1080p_202607010113.mp4",
     link: "/shop/amara-linen-wrap-dress"
   }
 ];
@@ -45,19 +48,36 @@ export const HeroSlider = () => {
 
   return (
     <section className="sticky top-0 h-screen w-full overflow-hidden bg-natural-linen/20">
-      {/* Immersive Slide Image Background */}
+      {/* Immersive Slide Image/Video Background */}
       <div className="absolute inset-0">
         <AnimatePresence>
-          <motion.img
-            key={slide.id}
-            src={slide.image}
-            alt={slide.subtitle}
-            initial={{ opacity: 0, scale: 1.02 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 1, scale: 1, zIndex: -1 }}
-            transition={{ duration: 1.4, ease: 'easeInOut' }}
-            className="absolute inset-0 h-full w-full object-cover object-[center_35%]"
-          />
+          {slide.video ? (
+            <motion.video
+              key={`vid-${slide.id}`}
+              src={slide.video}
+              poster={slide.image}
+              autoPlay
+              loop
+              muted
+              playsInline
+              initial={{ opacity: 0, scale: 1.02 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 1, scale: 1, zIndex: -1 }}
+              transition={{ duration: 1.4, ease: 'easeInOut' }}
+              className="absolute inset-0 h-full w-full object-cover object-[center_35%]"
+            />
+          ) : (
+            <motion.img
+              key={`img-${slide.id}`}
+              src={slide.image}
+              alt={slide.subtitle}
+              initial={{ opacity: 0, scale: 1.02 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 1, scale: 1, zIndex: -1 }}
+              transition={{ duration: 1.4, ease: 'easeInOut' }}
+              className="absolute inset-0 h-full w-full object-cover object-[center_35%]"
+            />
+          )}
         </AnimatePresence>
         {/* Dark vignette tint to let white typography pop */}
         <div className="absolute inset-0 bg-black/25" />
