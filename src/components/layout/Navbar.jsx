@@ -63,7 +63,7 @@ export const Navbar = () => {
             
             {/* Center: Free delivery info */}
             <div className="text-center text-charcoal font-medium sm:justify-self-center">
-              Free Delivery Over $200
+              Free Delivery Over ₹15000
             </div>
 
             {/* Right: Star rating */}
@@ -221,7 +221,7 @@ export const Navbar = () => {
                         </div>
                         <div className="mt-2 flex justify-between font-sans text-[9px] font-medium text-charcoal uppercase tracking-wider">
                           <span>Amara Dress</span>
-                          <span>$185.00</span>
+                          <span>₹15000.00</span>
                         </div>
                       </Link>
                       <Link to="/shop/sundance-resort-shirt" onClick={() => setActiveMenu(null)} className="group block text-left">
@@ -230,7 +230,7 @@ export const Navbar = () => {
                         </div>
                         <div className="mt-2 flex justify-between font-sans text-[9px] font-medium text-charcoal uppercase tracking-wider">
                           <span>Sundance Shirt</span>
-                          <span>$120.00</span>
+                          <span>₹9800.00</span>
                         </div>
                       </Link>
                     </div>

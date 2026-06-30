@@ -104,7 +104,7 @@ export const Profile = () => {
                     </div>
                     <div className="text-left sm:text-right">
                       <p className="font-serif text-lg text-charcoal mb-1">
-                        ${parseFloat(order.totalPrice.amount).toFixed(2)} {order.totalPrice.currencyCode}
+                        ₹{parseFloat(order.totalPrice.amount).toFixed(2)}
                       </p>
                       <span className="inline-block bg-natural-linen/50 text-charcoal text-[9px] tracking-widest uppercase font-bold px-2 py-1 rounded">
                         {order.fulfillmentStatus || 'Unfulfilled'}

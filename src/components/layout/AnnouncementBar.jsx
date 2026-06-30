@@ -40,7 +40,7 @@ export const AnnouncementBar = () => {
         
         {/* Center: Free delivery info */}
         <div className="text-center text-charcoal font-medium sm:justify-self-center">
-          Free Delivery Over $200
+          Free Delivery Over ₹15000
         </div>
 
         {/* Right: Star rating */}

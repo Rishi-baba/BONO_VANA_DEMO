@@ -63,9 +63,9 @@ export const ProductCard = ({ product }) => {
           {product.productType}
         </p>
         <div className="mt-1 flex items-baseline gap-2 font-sans text-xs">
-          <span className="font-bold text-charcoal">${price.toFixed(2)}</span>
+          <span className="font-bold text-charcoal">₹{price.toFixed(2)}</span>
           {isOnSale && (
-            <span className="text-charcoal/40 line-through">${comparePrice.toFixed(2)}</span>
+            <span className="text-charcoal/40 line-through">₹{comparePrice.toFixed(2)}</span>
           )}
         </div>
       </div>

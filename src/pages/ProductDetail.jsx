@@ -114,7 +114,7 @@ export const ProductDetail = () => {
             <span className="font-sans text-[10px] tracking-widest uppercase font-bold text-forest-green">{product.vendor}</span>
             <h1 className="font-serif text-3xl font-medium text-charcoal">{product.title}</h1>
             <div className="text-lg font-sans font-bold text-charcoal">
-              ${activeVariant ? parseFloat(activeVariant.price.amount).toFixed(2) : parseFloat(product.priceRange.minVariantPrice.amount).toFixed(2)}
+              ₹{activeVariant ? parseFloat(activeVariant.price.amount).toFixed(2) : parseFloat(product.priceRange.minVariantPrice.amount).toFixed(2)}
             </div>
             {activeVariant?.quantityAvailable && (
               <span className="inline-block text-[10px] font-sans text-forest-green bg-sage/20 font-bold px-2 py-0.5 rounded-[4px]">

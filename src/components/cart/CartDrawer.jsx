@@ -92,7 +92,7 @@ export const CartDrawer = () => {
                               {item.product.title}
                             </h3>
                             <span className="font-sans text-xs font-bold text-charcoal">
-                              ${parseFloat(item.variant.price.amount).toFixed(2)}
+                              ₹{parseFloat(item.variant.price.amount).toFixed(2)}
                             </span>
                           </div>
                           <p className="font-sans text-[10px] tracking-wider uppercase text-charcoal/40 mt-1">
@@ -138,7 +138,7 @@ export const CartDrawer = () => {
               <div className="p-6 border-t border-charcoal/5 bg-natural-linen/25 space-y-4">
                 <div className="flex justify-between font-sans text-xs tracking-widest uppercase font-bold text-charcoal">
                   <span>Subtotal</span>
-                  <span>${cartSubtotal.toFixed(2)} USD</span>
+                  <span>₹{cartSubtotal.toFixed(2)}</span>
                 </div>
                 <p className="font-sans text-[10px] text-charcoal/40 leading-relaxed">
                   Shipping, taxes, and discounts will be calculated at checkout.
