@@ -66,7 +66,7 @@ export const HeroSlider = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 1, scale: 1, zIndex: -1 }}
               transition={{ duration: 1.4, ease: 'easeInOut' }}
-              className="absolute inset-0 h-full w-full object-cover object-[center_20%]"
+              className="absolute inset-0 h-full w-full object-cover object-[center_45%]"
             />
           ) : (
             <motion.img
@@ -77,7 +77,7 @@ export const HeroSlider = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 1, scale: 1, zIndex: -1 }}
               transition={{ duration: 1.4, ease: 'easeInOut' }}
-              className="absolute inset-0 h-full w-full object-cover object-[center_20%]"
+              className="absolute inset-0 h-full w-full object-cover object-[center_45%]"
             />
           )}
         </AnimatePresence>
