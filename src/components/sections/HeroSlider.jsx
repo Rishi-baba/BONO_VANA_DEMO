@@ -128,7 +128,7 @@ export const HeroSlider = () => {
                   transition={{ duration: 0.5, ease: 'easeInOut' }}
                 >
                   <Link to={slide.link}>
-                    <button className="bg-warm-ivory/85 backdrop-blur-sm text-charcoal hover:bg-warm-ivory transition-colors px-6 py-3 rounded-[6px] text-[10px] tracking-widest uppercase font-sans font-bold shadow-md cursor-pointer">
+                    <button className="bg-forest-green text-warm-ivory hover:bg-forest-green/90 transition-colors px-6 py-3 rounded-[6px] text-[10px] tracking-widest uppercase font-sans font-bold shadow-md cursor-pointer">
                       Browse Collection
                     </button>
                   </Link>
