@@ -61,7 +61,7 @@ export const Preloader = ({ onComplete }) => {
   const getCurrentImage = () => {
     if (phase === 1) return "/images/amara_linen_dress.jpg";
     if (phase === 2) return "/images/sundance_resort_shirt.png";
-    return "/images/hero_resort_wear.jpg"; // phase === 3
+    return "https://cdn.shopify.com/s/files/1/0985/3757/0377/files/women_stripe_shirt_pant_e87e9366-0ba8-406f-b31c-28ef90777b90.jpg?v=1782820303"; // phase === 3
   };
 
   return (
