@@ -22,7 +22,7 @@ export const Navbar = () => {
 
   return (
     <header 
-      className="fixed top-4 left-0 right-0 z-40 px-4 md:px-8"
+      className="fixed top-0 left-0 right-0 z-40 px-4 md:px-8"
       onMouseLeave={() => setActiveMenu(null)}
     >
       {/* Floating Header Parent Container (aligned width with VÉON card) */}
@@ -31,47 +31,7 @@ export const Navbar = () => {
         {/* Unified Floating Header Card */}
         <div className="bg-warm-ivory/80 backdrop-blur-md border border-charcoal/5 rounded-[8px] overflow-hidden shadow-lg">
           
-          {/* Top Row: Merged Announcement Bar */}
-          <div className="bg-natural-linen/25 text-charcoal py-2 px-6 border-b border-charcoal/5 text-[9px] tracking-widest uppercase hidden sm:grid sm:grid-cols-3 items-center gap-1 font-sans font-medium text-center">
-            
-            {/* Left: Currency selector */}
-            <div className="relative sm:justify-self-start">
-              <button
-                onClick={() => setIsCurrencyOpen(!isCurrencyOpen)}
-                className="flex items-center gap-1 text-charcoal/80 hover:text-forest-green transition-colors focus:outline-none cursor-pointer"
-              >
-                <span>{currency}</span>
-                <ChevronDown className="h-3 w-3" />
-              </button>
-              {isCurrencyOpen && (
-                <div className="absolute left-0 mt-2 py-1 bg-warm-ivory border border-charcoal/10 rounded-md shadow-lg z-50 w-48 text-left">
-                  {currencies.map((c) => (
-                    <button
-                      key={c}
-                      onClick={() => {
-                        setCurrency(c);
-                        setIsCurrencyOpen(false);
-                      }}
-                      className="block w-full text-left px-4 py-1.5 hover:bg-natural-linen/40 text-charcoal/80 hover:text-forest-green transition-colors text-[9px]"
-                    >
-                      {c}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-            
-            {/* Center: Free delivery info */}
-            <div className="text-center text-charcoal font-medium sm:justify-self-center">
-              Free Delivery Over ₹15000
-            </div>
 
-            {/* Right: Star rating */}
-            <div className="flex items-center gap-1.5 text-charcoal/80 sm:justify-self-end">
-              <span className="text-charcoal text-[11px] leading-none">★★★★★</span>
-              <span>4.85 / 5 on Trusted Shops</span>
-            </div>
-          </div>
 
           {/* Bottom Row: Header Navigation */}
           <div className="px-6 py-2.5 flex items-center justify-between">
