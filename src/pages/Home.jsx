@@ -4,7 +4,7 @@ import { CategoryList } from '../components/sections/CategoryList';
 import { CarouselTabSection } from '../components/sections/CarouselTabSection';
 import { ValueBlock } from '../components/sections/ValueBlock';
 import { EditorialHighlight } from '../components/sections/EditorialHighlight';
-import { FeaturedCategories } from '../components/sections/FeaturedCategories';
+import { CollectionsGrid } from '../components/sections/CollectionsGrid';
 import { Testimonials } from '../components/sections/Testimonials';
 import { SEO } from '../components/ui/SEO';
 import { ScrollReveal, TextReveal } from '../components/ui/ScrollReveal';
