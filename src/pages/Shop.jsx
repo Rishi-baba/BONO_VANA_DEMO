@@ -105,7 +105,7 @@ export const Shop = () => {
   });
 
   return (
-    <div className="pt-24 pb-16 min-h-screen">
+    <div className="max-w-7xl mx-auto px-4 md:px-8 pt-24 pb-16 min-h-screen">
       <SEO 
         title={collectionParam ? `Shop ${collectionParam}` : "Shop All"} 
         description="Browse the full collection of Boho Vana premium sustainable fashion."
