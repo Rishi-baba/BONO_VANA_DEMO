@@ -22,7 +22,7 @@ export const Navbar = () => {
 
   return (
     <header 
-      className="fixed top-0 left-0 right-0 z-40 px-4 md:px-8"
+      className="fixed top-2 left-0 right-0 z-40 px-4 md:px-8"
       onMouseLeave={() => setActiveMenu(null)}
     >
       {/* Floating Header Parent Container (aligned width with VÉON card) */}
