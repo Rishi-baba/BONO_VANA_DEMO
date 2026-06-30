@@ -11,7 +11,7 @@ import { ScrollReveal, TextReveal } from '../components/ui/ScrollReveal';
 
 export const Home = () => {
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full">
       <SEO 
         title="Home" 
         description="Boho Vana offers premium sustainable fashion, crafted with organic materials. Discover our minimalist, timeless collections for women."
