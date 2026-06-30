@@ -25,6 +25,7 @@ export const Preloader = ({ onComplete }) => {
     const t5 = setTimeout(() => {
       setPhase(5);
       setTimeout(() => {
+        document.body.style.overflow = '';
         setIsDone(true);
         if (onComplete) onComplete();
       }, 800); // wait for slide-up exit transition
