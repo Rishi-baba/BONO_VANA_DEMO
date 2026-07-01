@@ -34,17 +34,25 @@ const SLIDES = [
 
 export const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleNext = () => {
     setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
   };
 
   useEffect(() => {
-    if (!SLIDES[currentSlide].video) {
+    if (isMobile || !SLIDES[currentSlide].video) {
       const timer = setTimeout(handleNext, 8500);
       return () => clearTimeout(timer);
     }
-  }, [currentSlide]);
+  }, [currentSlide, isMobile]);
 
   const slide = SLIDES[currentSlide];
 
@@ -53,7 +61,7 @@ export const HeroSlider = () => {
       {/* Immersive Slide Image/Video Background */}
       <div className="absolute inset-0">
         <AnimatePresence>
-          {slide.video ? (
+          {slide.video && !isMobile ? (
             <motion.video
               key={`vid-${slide.id}`}
               src={slide.video}
@@ -66,7 +74,7 @@ export const HeroSlider = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 1, scale: 1, zIndex: -1 }}
               transition={{ duration: 1.4, ease: 'easeInOut' }}
-              className="absolute inset-0 h-full w-full object-cover object-[center_45%]"
+              className="absolute inset-0 h-full w-full object-cover object-[center_25%] md:object-[center_45%]"
             />
           ) : (
             <motion.img
@@ -77,7 +85,7 @@ export const HeroSlider = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 1, scale: 1, zIndex: -1 }}
               transition={{ duration: 1.4, ease: 'easeInOut' }}
-              className="absolute inset-0 h-full w-full object-cover object-[center_45%]"
+              className="absolute inset-0 h-full w-full object-cover object-[center_25%] md:object-[center_45%]"
             />
           )}
         </AnimatePresence>
