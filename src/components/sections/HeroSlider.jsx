@@ -11,7 +11,7 @@ const SLIDES = [
     image: "/images/hero_resort_wear.jpg",
     video: "/images/Woman_looking_toward_garden_1080p_202607010113.mp4",
     link: "/shop?collection=resort",
-    mobilePosition: "object-center"
+    mobilePosition: "object-[75%_15%]"
   },
   {
     id: 2,
