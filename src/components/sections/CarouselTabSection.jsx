@@ -4,7 +4,7 @@ import { ProductCard } from '../product/ProductCard';
 import { getProducts } from '../../services/shopify';
 
 export const CarouselTabSection = () => {
-  const [activeTab, setActiveTab] = useState('best-sellers');
+  const [activeTab, setActiveTab] = useState('sale');
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const scrollRef = useRef(null);
@@ -17,9 +17,9 @@ export const CarouselTabSection = () => {
   }, []);
 
   const tabs = [
+    { id: 'sale', label: 'Sale' },
     { id: 'best-sellers', label: 'Best Sellers' },
-    { id: 'new-arrivals', label: 'New Arrivals' },
-    { id: 'sale', label: 'Sale' }
+    { id: 'new-arrivals', label: 'New Arrivals' }
   ];
 
   const getFilteredProducts = () => {
