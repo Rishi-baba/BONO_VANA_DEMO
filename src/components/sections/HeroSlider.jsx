@@ -10,7 +10,8 @@ const SLIDES = [
     tagline: "Upgrade your resort wardrobe with organic, handcrafted linen garments designed for natural breathability.",
     image: "/images/hero_resort_wear.jpg",
     video: "/images/Woman_looking_toward_garden_1080p_202607010113.mp4",
-    link: "/shop?collection=resort"
+    link: "/shop?collection=resort",
+    mobilePosition: "object-center"
   },
   {
     id: 2,
@@ -74,7 +75,7 @@ export const HeroSlider = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 1, scale: 1, zIndex: -1 }}
               transition={{ duration: 1.4, ease: 'easeInOut' }}
-              className="absolute inset-0 h-full w-full object-cover object-[center_25%] md:object-[center_45%]"
+              className={`absolute inset-0 h-full w-full object-cover ${slide.mobilePosition || 'object-[center_25%]'} md:object-[center_45%]`!}
             />
           ) : (
             <motion.img
@@ -85,7 +86,7 @@ export const HeroSlider = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 1, scale: 1, zIndex: -1 }}
               transition={{ duration: 1.4, ease: 'easeInOut' }}
-              className="absolute inset-0 h-full w-full object-cover object-[center_25%] md:object-[center_45%]"
+              className={`absolute inset-0 h-full w-full object-cover ${slide.mobilePosition || 'object-[center_25%]'} md:object-[center_45%]`!}
             />
           )}
         </AnimatePresence>
